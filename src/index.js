@@ -1,4 +1,5 @@
-import _ from 'lodash';
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-extraneous-dependencies */
 import './style.css';
 
 const tasks = [
@@ -26,7 +27,7 @@ const tasks = [
 
 const info = () => {
   const taskContent = document.querySelector('.list-items');
-  for (let i = 0; i < tasks.length; i++) {
+  for (let i = 0; i < tasks.length; i += 1) {
     const element = document.createElement('li');
     element.classList.add('list-info');
     element.innerHTML = `

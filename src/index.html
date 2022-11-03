@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>To do list</title>
 </head>
 <body>
@@ -11,14 +11,20 @@
         <section class="container">
             <div class="app-title">
                 <h1>Today's To Do</h1>
-                <i class="fa fa-refresh"></i>
+                <i class="material-icons">sync</i>
             </div>
+            <form class="add-form">
+                <input type="text" name="add-to-list" id="add-to-list" placeholder="Add to your list...">
+                <button type="submit" title="click this or press enter to submit" id="form-button">
+                  <i class="material-icons">subdirectory_arrow_left</i>
+                </button>
+            </form>
             <ul class="list-items"></ul>
             <div class="clear-btn">
                 <button class="btn-clear btn">Clear all completed</button>
             </div>
         </section>
     </main>
-    <footer>&copy; 2022 Made With ❤️ by krisbobo</footer>
+    <footer>&copy; 2022 Made with ❤️ by krisbobo</footer>
 </body>
 </html>

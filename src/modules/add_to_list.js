@@ -1,18 +1,18 @@
-import Store from './storage';
+import { Store } from './index';
 
 class addTasksToList {
   static addItemsToInterface() {
     const tasks = Store.getTask();
     const list = document.querySelector('.list-items');
-    const element = document.createElement('li');
-    element.classList.add('list-info');
+    list.innerHTML = '';
     tasks.forEach((task) => {
-      element.innerHTML = `
+      list.innerHTML = `
+    <li class="list-info">
     <input type=“checkbox” name=“checkbox” id=“${task.index}” title=“Check” value="${task.description}" ${task.completed && 'checked'}>
-    <label id=“${task.index}” contentEditable=“true”>${task.description}</label>
-    <i class=“icon material-icons”>more_vert</i>
+    <input type="text" name="description" value="${task.description}" id="${task.index}" class="${task.completed ? 'line-through' : ''}">
+    <i class="fa-solid fa-trash-can"></i>
+    </li>
     `;
-      list.appendChild(element);
     });
   }
 

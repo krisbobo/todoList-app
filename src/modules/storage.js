@@ -1,17 +1,18 @@
-export default class Store {
-  static getTask() {
-    let userInput;
-    if (localStorage.getItem('userInput') === null) {
-      userInput = [];
-    } else {
-      userInput = JSON.parse(localStorage.getItem('userInput'));
+class Store {
+  static getItems = () => {
+    let tasks = null;
+    if (localStorage.getItem('tasks') === null) {
+      tasks = [];
+      return tasks;
     }
-    return userInput;
-  }
 
-  static addTask(task) {
-    const userInput = Store.getTask();
-    userInput.push(task);
-    localStorage.setItem('userInput', JSON.stringify(userInput));
-  }
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+    return tasks;
+  };
+
+  static setItems = (itemToAdd) => {
+    localStorage.setItem('tasks', JSON.stringify(itemToAdd));
+  };
 }
+
+export default Store;

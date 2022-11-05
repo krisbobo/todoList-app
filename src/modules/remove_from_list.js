@@ -1,24 +1,25 @@
-import { Store, addTasksToList } from './index';
+import { Store, AddItemsToList } from './index';
 
-class removeItem {
-  static removeFromList = (itemList) => {
+class RemoveItemFromList {
+  static removeItemFromList = (itemList) => {
     itemList.parentElement.remove();
-    const tasks = Store.getTask();
+    const tasks = Store.getItems();
     const newTasks = tasks.filter(
-      (item) => parseInt(itemList.previousElementSibling.id, 10) !== item.index,
+      // eslint-disable-next-line comma-dangle
+      (item) => parseInt(itemList.previousElementSibling.id, 10) !== item.index
     );
-    Store.addTask(newTasks);
-  }
+    Store.setItems(newTasks);
+  };
 
-  static changeIndex = () => {
-    const tasks = Store.getTask();
+  static changeTaskIndex = () => {
+    const tasks = Store.getItems();
     const newTasks = tasks.map((task, index) => {
       task.index = index;
       return task;
     });
-    Store.addTask(newTasks);
-    addTasksToList.addItemsToInterface();
+    Store.setItems(newTasks);
+    AddItemsToList.addListItemsToInterface();
   };
 }
 
-export default removeItem;
+export default RemoveItemFromList;

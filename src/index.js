@@ -1,11 +1,9 @@
 /* eslint-disable import/extensions */
 import './style.css';
-import removeItem from './modules/remove_from_list';
-import addTasksToList from './modules/add_to_list';
-import Store from './modules/storage';
+import { AddItemsToList, Store, RemoveItemFromList } from './modules/index';
 
 // ========== Event Listener to display items ===========
-document.addEventListener('DOMContentLoaded', addTasksToList.addItemsToInterface);
+document.addEventListener('DOMContentLoaded', AddItemsToList.addListItemsToInterface);
 
 // ========== Event Listener to add item to list ==========
 const form = document.querySelector('.add-form');
@@ -13,10 +11,11 @@ const listInput = document.getElementById('add-to-list');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  const index = Store.getTask().length ? Store.getTask()[Store.getTask().length - 1].index + 1 : 0;
+  const index = Store.getItems().length ? Store.getItems()[Store.getItems().length - 1].index + 1
+    : 0;
   const item = { description: listInput.value, completed: false, index };
-  addTasksToList.addToList(item);
-  addTasksToList.addItemsToInterface();
+  AddItemsToList.addItemToList(item);
+  AddItemsToList.addListItemsToInterface();
   form.reset();
 });
 
@@ -24,14 +23,14 @@ form.addEventListener('submit', (e) => {
 const listItems = document.querySelector('.list-items');
 listItems.addEventListener('click', (e) => {
   if (e.target.classList.contains('fa-trash-can')) {
-    removeItem.removeFromList(e.target);
-    removeItem.changeIndex();
+    RemoveItemFromList.removeItemFromList(e.target);
+    RemoveItemFromList.changeIndex();
   }
 });
 
 // ======== Event To Add Edited Description To Store ========
 listItems.addEventListener('input', (e) => {
-  const items = Store.getTask();
+  const items = Store.getItems();
   if (e.target.name === 'description') {
     let itemIndex;
     items.filter((item, index) => {
@@ -41,6 +40,6 @@ listItems.addEventListener('input', (e) => {
       }
       return null;
     });
-    addTasksToList.addEditedTaskToStore(e.target.value, itemIndex);
+    AddItemsToList.addEditedTaskToStore(e.target.value, itemIndex);
   }
 });

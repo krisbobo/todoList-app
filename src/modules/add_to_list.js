@@ -1,32 +1,41 @@
 import { Store } from './index';
 
-class addTasksToList {
-  static addItemsToInterface() {
-    const tasks = Store.getTask();
-    const list = document.querySelector('.list-items');
-    list.innerHTML = '';
+class AddItemsToList {
+  static addListItemsToInterface = () => {
+    const tasks = Store.getItems();
+    const listItems = document.querySelector('.list-items');
+    listItems.innerHTML = '';
     tasks.forEach((task) => {
-      list.innerHTML = `
-    <li class="list-info">
-    <input type=“checkbox” name=“checkbox” id=“${task.index}” title=“Check” value="${task.description}" ${task.completed && 'checked'}>
-    <input type="text" name="description" value="${task.description}" id="${task.index}" class="${task.completed ? 'line-through' : ''}">
-    <i class="fa-solid fa-trash-can"></i>
-    </li>
+      listItems.innerHTML += `
+        <li class="list-info">
+          <input
+            type="checkbox"
+            name="checkbox"
+            id="${task.index}"
+            title="Check"
+            value="${task.description}"
+            ${task.completed && 'checked'}
+          />
+          <input type="text" name="description" value="${task.description}" id="${
+        task.index
+      }" class="${task.completed ? 'line-through' : ''}"/>
+          <i class="fa-solid fa-trash-can"></i>
+        </li>
     `;
     });
-  }
+  };
 
-  static addToList(task) {
-    const tasks = Store.getTask();
+  static addItemToList = (task) => {
+    const tasks = Store.getItems();
     tasks.push(task);
-    Store.addTask(tasks);
-  }
+    Store.setItems(tasks);
+  };
 
   static addEditedTaskToStore = (newDescription, index) => {
-    const tasks = Store.getTask();
+    const tasks = Store.getItems();
     tasks[index].description = newDescription;
-    Store.addTask(tasks);
+    Store.setItems(tasks);
   };
 }
 
-export default addTasksToList;
+export default AddItemsToList;

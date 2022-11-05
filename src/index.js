@@ -11,7 +11,7 @@ const listInput = document.getElementById('add-to-list');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  const index = Store.getItems().length ? Store.getItems()[Store.getItems().length - 1].index + 1
+  const index = Store.getItems().length ? Store.getItems()[Store.getItems().length].index + 1
     : 0;
   const item = { description: listInput.value, completed: false, index };
   AddItemsToList.addItemToList(item);
@@ -24,7 +24,7 @@ const listItems = document.querySelector('.list-items');
 listItems.addEventListener('click', (e) => {
   if (e.target.classList.contains('fa-trash-can')) {
     RemoveItemFromList.removeItemFromList(e.target);
-    RemoveItemFromList.changeIndex();
+    RemoveItemFromList.changeTaskIndex();
   }
 });
 

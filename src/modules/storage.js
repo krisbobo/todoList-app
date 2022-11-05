@@ -14,14 +14,4 @@ export default class Store {
     userInput.push(task);
     localStorage.setItem('userInput', JSON.stringify(userInput));
   }
-
-  static removeTask(del) {
-    const userInput = Store.getTask();
-    userInput.forEach((task, index) => {
-      if (task.del === del) {
-        userInput.filter(this.getTask(JSON.parse(localStorage.getItem('userInput')), index));
-      }
-    });
-    localStorage.setItem('userInput', JSON.stringify(userInput));
-  }
 }

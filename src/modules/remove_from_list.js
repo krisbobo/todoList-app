@@ -1,5 +1,4 @@
-import Store from './storage';
-import addTasksToList from './add_to_list';
+import { Store, addTasksToList } from './index';
 
 class removeItem {
   static removeFromList = (itemList) => {

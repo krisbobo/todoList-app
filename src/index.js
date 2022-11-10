@@ -11,8 +11,7 @@ const listInput = document.getElementById('add-to-list');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  const index = Store.getItems().length ? Store.getItems()[Store.getItems().length].index + 1
-    : 0;
+  const index = Store.getItems().length + 1;
   const item = { description: listInput.value, completed: false, index };
   AddItemsToList.addItemToList(item);
   AddItemsToList.addListItemsToInterface();

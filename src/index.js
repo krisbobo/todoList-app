@@ -57,3 +57,13 @@ listItems.addEventListener('change', (event) => {
     }
   }
 });
+
+// ============ Event To Clear All Completed Tasks ============
+const clearBtn = document.querySelector('.clear-btn');
+clearBtn.addEventListener('click', () => {
+  const tasks = Store.getItems();
+  const filteredTasks = tasks.filter((task) => task.completed === false);
+  Store.setItems(filteredTasks);
+  RemoveItemFromList.changeTaskIndex();
+  AddItemsToList.addListItemsToInterface();
+});

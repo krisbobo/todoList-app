@@ -10,7 +10,7 @@
 
 .container {
   margin: 0 auto;
-  margin-top: 12%;
+  margin-top: 10%;
   width: 95%;
   border: 1px solid #e6e6e6;
   box-shadow: 0.5rem 0.9rem 1.2rem #e6e6e6;
@@ -23,11 +23,17 @@
   padding: 1rem;
 }
 
+.fa-solid:hover {
+  color: red;
+  opacity: 1;
+}
+
 .fa-solid {
   font-weight: bold;
-  font-size: 1.5rem;
-  color: red;
+  font-size: 1.2rem;
   cursor: pointer;
+  color: #5c5c5c;
+  transition: opacity 0.3s ease-out;
 }
 
 .app-title .material-icons {
@@ -80,6 +86,11 @@ input[type="text"] {
   border: none;
   padding: 0 2rem;
   outline: none;
+}
+
+.line-through {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
 
 .list-items .list-info {

@@ -1,25 +1,25 @@
 {
-  "name": "webpack",
+  "name": "todoList-app",
   "version": "1.0.0",
-  "description": "This is a webpack boilerplate",
+  "description": "My todoList app",
   "private": "true",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d dist",
     "start": "webpack serve --open",
     "server": "node server.js",
     "build": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/krisbobo/webpack.git"
+    "url": "git+https://github.com/krisbobo/todoList-app.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/krisbobo/webpack/issues"
+    "url": "https://github.com/krisbobo/todoList-app/issues"
   },
-  "homepage": "https://github.com/krisbobo/webpack#readme",
+  "homepage": "https://krisbobo.github.io/todoList-app",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.1",
@@ -39,6 +39,7 @@
     "webpack-dev-server": "^4.9.3"
   },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "lodash": "^4.17.21"
   }
 }

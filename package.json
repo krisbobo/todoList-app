@@ -4,10 +4,7 @@
   "description": "My todoList app",
   "private": "true",
   "scripts": {
-    "deploy": "gh-pages -d dist",
-    "start": "webpack serve --open",
-    "server": "node server.js",
-    "build": "webpack"
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",

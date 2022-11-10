@@ -53,12 +53,6 @@
   background: #f6f6f6;
 }
 
-input {
-  border: none;
-  padding: 0 1rem;
-  outline: none;
-}
-
 .add-form #form-button {
   border: none;
   background: #f6f6f6;
@@ -70,6 +64,22 @@ input {
   font-size: 1rem;
   color: #5c5c5c;
   cursor: pointer;
+}
+
+li {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+input[type="text"] {
+  flex: 8;
+  border: none;
+  padding: 0 2rem;
+  outline: none;
 }
 
 .list-items .list-info {

@@ -23,17 +23,17 @@
   padding: 1rem;
 }
 
-.fa-solid:hover {
-  color: red;
-  opacity: 1;
-}
-
 .fa-solid {
   font-weight: bold;
   font-size: 1.2rem;
   cursor: pointer;
   color: #5c5c5c;
   transition: opacity 0.3s ease-out;
+}
+
+.fa-solid:hover {
+  color: red;
+  opacity: 1;
 }
 
 .app-title .material-icons {

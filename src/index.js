@@ -1,6 +1,8 @@
 /* eslint-disable import/extensions */
 import './style.css';
-import { AddItemsToList, Store, RemoveItemFromList } from './modules/index';
+import {
+  AddItemsToList, Store, RemoveItemFromList, UpdateStatus,
+} from './modules/index';
 
 // ========== Event Listener to display items ===========
 document.addEventListener('DOMContentLoaded', AddItemsToList.addListItemsToInterface);
@@ -40,5 +42,18 @@ listItems.addEventListener('input', (e) => {
       return null;
     });
     AddItemsToList.addEditedTaskToStore(e.target.value, itemIndex);
+  }
+});
+
+// ========= Event to toggle task completion ===========
+listItems.addEventListener('change', (event) => {
+  if (event.target.name === 'checkbox') {
+    if (event.target.checked) {
+      event.target.nextElementSibling.classList.add('line-through');
+      UpdateStatus.updateTaskToCompleted(event.target);
+    } else {
+      event.target.nextElementSibling.classList.remove('line-through');
+      UpdateStatus.updateTaskToCompleted(event.target);
+    }
   }
 });

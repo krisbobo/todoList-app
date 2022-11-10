@@ -2,7 +2,7 @@
 
 # To-Do List
 
-> In this project, I built a simple HTML list of To Do tasks. The list is styled according to the specifications listed in the lesson. This simple web page is built using webpack and served by a webpack dev server. In this part of the project, I implemented the structure of the list.
+> In this project, I built a simple HTML list of To Do tasks. The list is styled according to the specifications listed in the lesson. This simple web page is built using webpack and served by a webpack dev server. In this part of the project, I made the app interactive; such that one can clear all checked tasks.
 
 ## Built With
 
@@ -68,7 +68,7 @@ This will start up the dev server for the live version
 
 ## Authors
 
-👤 **Kiyong Bohbo**
+👤 **Christian Kiyong**
 
 - GitHub: [krisbobo](https://github.com/krisbobo)
 - Twitter: [ChrisboboSys](https://twitter.com/ChrisboboSys)
@@ -93,4 +93,3 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](./LICENSE) licensed.
-

@@ -10,7 +10,7 @@ module.exports = {
   devServer: {
     static: './dist',
   },
-
+  devtool: 'inline-source-map',
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({

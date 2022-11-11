@@ -16,6 +16,8 @@
 
 ## Live Demo
 
+[To do List Live app](https://krisbobo.github.io/todoList-app/)
+
 ## Getting Started
 
 To get a local copy up and running, follow these simple example steps.

@@ -11,6 +11,7 @@
 :root {
   --pointer: pointer;
   --color: #e6e6e6;
+  --gray: #5c5c5c;
 }
 
 .container {
@@ -32,7 +33,7 @@
   font-weight: bold;
   font-size: 1.2rem;
   cursor: var(--pointer);
-  color: #5c5c5c;
+  color: var(--gray);
   transition: opacity 0.3s ease-out;
 }
 
@@ -73,7 +74,7 @@
 .add-form #form-button i {
   font-weight: bold;
   font-size: 1rem;
-  color: #5c5c5c;
+  color: var(--gray);
   cursor: var(--pointer);
 }
 
@@ -117,7 +118,7 @@ input[type="text"] {
   border: none;
   background: none;
   cursor: var(--pointer);
-  color: #5c5c5c;
+  color: var(--gray);
   font-size: 1.1rem;
   font-weight: 700;
 }
